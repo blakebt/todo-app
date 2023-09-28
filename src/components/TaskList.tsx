@@ -1,17 +1,12 @@
 import TaskItem from "./TaskItem"
-import { TaskProps } from "../types/types"
-
-interface Task {
-  id: number,
-  text: string
-}
+import type { Task, TaskProps } from "../types/types"
 
 function TaskList({ data }: TaskProps) {
 
   const renderedTasks = data.map((item: Task) => {
     return (
       <div key={item.id}>
-        <TaskItem text={item.text} />
+        <TaskItem id={item.id} text={item.text} />
       </div>
       
     )

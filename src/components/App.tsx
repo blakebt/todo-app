@@ -1,16 +1,20 @@
+import { useEffect } from "react"
 import Form from "./Form"
 import TaskList from "./TaskList"
+import useTasksContext from "../hooks/useTasksContext"
 function App() {
+
+  const actions = useTasksContext()
   
-  const tasks = [
-    {id: 1, text: 'go to store'},
-    {id: 2, text: 'go home'},
-    {id: 3, text: 'walk the dog'}
-  ]
+  const fetchTasks = actions!.fetchTasks
+  useEffect(() => {
+    fetchTasks()
+  }, [fetchTasks])
+
   return (
     <div>
       <Form />
-      <TaskList data={tasks}/>
+      <TaskList data={actions!.tasks}/>
     </div>
   )
 }
