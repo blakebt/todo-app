@@ -1,7 +1,9 @@
 import { useEffect } from "react"
 import Form from "./Form"
 import TaskList from "./TaskList"
+import Panel from "./Panel"
 import useTasksContext from "../hooks/useTasksContext"
+
 function App() {
 
   const actions = useTasksContext()
@@ -13,10 +15,10 @@ function App() {
 
   return (
     <div className='flex flex-col justify-center items-center bg-cornsilk min-h-screen' >
-      <div className="border p-5 m-5 rounded bg-wenge">
+      <Panel className="bg-wenge border-wenge">
         <Form />
         <TaskList data={actions!.tasks}/>
-      </div>
+      </Panel>
       
     </div>
   )
