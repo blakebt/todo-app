@@ -4,7 +4,7 @@ import TaskList from "./TaskList"
 import Panel from "./Panel"
 import useTasksContext from "../hooks/useTasksContext"
 
-function App() {
+const App: React.FC = () => {
 
   const actions = useTasksContext()
   

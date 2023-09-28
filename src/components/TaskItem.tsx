@@ -7,7 +7,7 @@ interface TaskItemProps {
   text: string
 }
 
-function TaskItem({ id, text }: TaskItemProps) {
+const TaskItem: React.FC<TaskItemProps> = ({ id, text }) => {
   const actions = useTasksContext();
 
   const removeTask = actions!.removeTask;
@@ -20,7 +20,7 @@ function TaskItem({ id, text }: TaskItemProps) {
   return (
     <div className="flex items-center justify-between px-3 py-2 bg-offwhite w-full rounded">
       {text}
-      <Button className='ml-4' onClick={handleClick} danger><FaTrashCan /></Button>
+      <Button className='ml-4 rounded' onClick={handleClick} danger><FaTrashCan /></Button>
     </div>
   )
 }

@@ -1,20 +1,12 @@
 {
   "tasks": [
     {
-      "id": 3,
-      "text": "walk the dog"
+      "text": "tasks",
+      "id": 1
     },
     {
-      "text": "testing tasks",
-      "id": 5
-    },
-    {
-      "text": "create a task",
-      "id": 9
-    },
-    {
-      "text": "add some tasks",
-      "id": 10
+      "text": "do something",
+      "id": 2
     }
   ]
 }
