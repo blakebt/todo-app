@@ -6,9 +6,10 @@ import useTasksContext from "../hooks/useTasksContext"
 
 const App: React.FC = () => {
 
-  const actions = useTasksContext()
+  const context = useTasksContext()
   
-  const fetchTasks = actions!.fetchTasks
+  const { fetchTasks, tasks } = context!
+
   useEffect(() => {
     fetchTasks()
   }, [fetchTasks])
@@ -17,7 +18,7 @@ const App: React.FC = () => {
     <div className='flex flex-col justify-center items-center bg-cornsilk min-h-screen' >
       <Panel className="bg-wenge border-wenge">
         <Form />
-        <TaskList data={actions!.tasks}/>
+        <TaskList data={tasks}/>
       </Panel> 
     </div>
   )

@@ -8,10 +8,11 @@ interface TaskItemProps {
 }
 
 const TaskItem: React.FC<TaskItemProps> = ({ id, text }) => {
-  const actions = useTasksContext();
+  const context = useTasksContext();
 
-  const removeTask = actions!.removeTask;
-
+  if(!context) return <div>No context</div>
+  
+  const { removeTask } = context
   
   const handleClick = () => {
     removeTask(id);

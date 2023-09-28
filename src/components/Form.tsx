@@ -5,9 +5,11 @@ import Button from './Button';
 
 const Form: React.FC = () => {
   const [task, setTask] = useState<string>('')
-  const actions = useTasksContext()
+  const context = useTasksContext()
   
-  const addTask = actions!.addTask
+  if(!context) return <div>No Context</div>
+
+  const { addTask } = context
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
