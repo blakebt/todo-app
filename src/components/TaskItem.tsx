@@ -18,7 +18,7 @@ function TaskItem({ id, text }: TaskItemProps) {
   }
 
   return (
-    <div className="inline-flex items-center justify-between px-3 py-2 bg-offwhite w-full">
+    <div className="flex items-center justify-between px-3 py-2 bg-offwhite w-full rounded">
       {text}
       <Button className='ml-4' onClick={handleClick} danger><FaTrashCan /></Button>
     </div>

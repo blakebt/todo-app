@@ -18,7 +18,9 @@ const Provider: React.FC<ContextProp> = ({ children }) => {
       text: task
     })
 
-    setTasks([...tasks, response.data])
+    setTasks(prevTasks => {
+      return [...prevTasks, response.data]
+    })
   }
 
   const removeTask = async (id: number) => {
