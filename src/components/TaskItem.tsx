@@ -1,4 +1,6 @@
+import { FaTrashCan } from 'react-icons/fa6'
 import useTasksContext from "../hooks/useTasksContext"
+import Button from "./Button"
 
 interface TaskItemProps {
   id: number,
@@ -16,9 +18,9 @@ function TaskItem({ id, text }: TaskItemProps) {
   }
 
   return (
-    <div>
+    <div className="inline-flex items-center justify-between px-3 py-2 bg-offwhite w-full">
       {text}
-      <button onClick={handleClick}>Delete</button>
+      <Button className='ml-4' onClick={handleClick} danger><FaTrashCan /></Button>
     </div>
   )
 }

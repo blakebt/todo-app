@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useTasksContext from '../hooks/useTasksContext';
+import Button from './Button';
 
 
 function Form() {
@@ -19,9 +20,9 @@ function Form() {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <input value={task} onChange={handleChange} placeholder="Add a task"/>
-      <button>Add</button>
+    <form className='flex mb-3' onSubmit={onSubmit}>
+      <input value={task} onChange={handleChange} placeholder="Add a task" className='px-2 bg-offwhite border border-wenge focus:outline-none'/>
+      <Button primary>Add</Button>
     </form>
   )
 }

@@ -1,3 +1,4 @@
+import './index.css';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import { Provider } from './context/taskContext';

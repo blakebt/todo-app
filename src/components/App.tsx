@@ -12,9 +12,12 @@ function App() {
   }, [fetchTasks])
 
   return (
-    <div>
-      <Form />
-      <TaskList data={actions!.tasks}/>
+    <div className='flex flex-col justify-center items-center bg-cornsilk min-h-screen' >
+      <div className="border p-5 m-5 rounded bg-wenge">
+        <Form />
+        <TaskList data={actions!.tasks}/>
+      </div>
+      
     </div>
   )
 }
