@@ -21,7 +21,7 @@ const Form: React.FC = () => {
 
   return (
     <form className='flex mb-3' onSubmit={onSubmit}>
-      <input value={task} onChange={handleChange} placeholder="Add a task" className='px-3 py-2 bg-offwhite border border-wenge focus:outline-none rounded-l'/>
+      <input value={task} onChange={handleChange} placeholder="Add a task" className='w-full px-3 py-2 bg-offwhite border border-wenge focus:outline-none rounded-l'/>
       <Button primary className='rounded-r'>Add</Button>
     </form>
   )

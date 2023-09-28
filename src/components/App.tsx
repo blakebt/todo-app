@@ -18,8 +18,7 @@ const App: React.FC = () => {
       <Panel className="bg-wenge border-wenge">
         <Form />
         <TaskList data={actions!.tasks}/>
-      </Panel>
-      
+      </Panel> 
     </div>
   )
 }
