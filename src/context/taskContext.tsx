@@ -33,11 +33,27 @@ const Provider: React.FC<ContextProp> = ({ children }) => {
     setTasks(updatedTasks);
   }
 
+  const editTask = async (id: number, text: string) => {
+    const response = await axios.put(`http://localhost:3005/tasks/${id}`, {
+      text
+    })
+
+    const updatedTasks = tasks.map((task: Task) => {
+      if(task.id === id) {
+        return {...task, ...response.data}
+      }
+      return task
+    })
+
+    setTasks(updatedTasks)
+  }
+
   const valueToShare = {
     tasks,
     fetchTasks,
     addTask,
-    removeTask
+    removeTask,
+    editTask
   }
 
   return (

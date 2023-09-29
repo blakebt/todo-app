@@ -12,6 +12,7 @@ interface TaskContextType {
   fetchTasks: () => Promise<void>;
   addTask: (task: string) => Promise<void>;
   removeTask: (id: number) => Promise<void>;
+  editTask: (id: number, text: string) => Promise<void>
 }
 
 type ContextProp = {
