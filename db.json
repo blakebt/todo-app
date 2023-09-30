@@ -1,15 +1,15 @@
 {
   "tasks": [
     {
-      "text": "new task",
+      "text": "Walk the dog",
       "id": 1
     },
     {
-      "text": "do another thing",
+      "text": "Work on projects",
       "id": 2
     },
     {
-      "text": "add a task",
+      "text": "Apply to jobs",
       "id": 3
     }
   ]
