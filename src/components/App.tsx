@@ -1,8 +1,8 @@
 import { useEffect } from "react"
+import useTasksContext from "../hooks/useTasksContext"
 import Form from "./Form"
 import TaskList from "./TaskList"
 import Panel from "./Panel"
-import useTasksContext from "../hooks/useTasksContext"
 
 const App: React.FC = () => {
 

@@ -4,6 +4,7 @@ interface PanelProps {
   className?: string,
   children?: React.ReactNode
 }
+
 const Panel: React.FC<PanelProps> = ({ children, className, ...rest }) => {
   const finalClasses = classNames(
     'border rounded p-5 shadow',
