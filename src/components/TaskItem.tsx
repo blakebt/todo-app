@@ -1,3 +1,9 @@
+/*
+  TODO
+
+  Completion status of a task needs to be persisted.
+*/
+
 import { useState } from 'react'
 import { FaTrashCan, FaPencil } from 'react-icons/fa6'
 import useTasksContext from "../hooks/useTasksContext"
