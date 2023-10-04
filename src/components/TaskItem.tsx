@@ -9,22 +9,20 @@ import { FaTrashCan, FaPencil } from 'react-icons/fa6'
 import useTasksContext from "../hooks/useTasksContext"
 import Button from "./Button"
 import EditForm from './EditForm'
-import Checkbox from './Checkbox'
+import { Task } from '../types/types'
 
 interface TaskItemProps {
-  id: number,
-  text: string
+  task: Task
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ id, text }) => {
+const TaskItem: React.FC<TaskItemProps> = ({ task: {id, text, completed } }) => {
   const [edit, setEdit] = useState<boolean>(false);
-  const [completed, setCompleted] = useState<boolean>(false)
 
   const context = useTasksContext();
 
   if(!context) return <div>No context</div>
   
-  const { removeTask } = context
+  const { removeTask, editTask } = context
   
   const handleEditClick = () => {
     setEdit(true)
@@ -34,12 +32,16 @@ const TaskItem: React.FC<TaskItemProps> = ({ id, text }) => {
     removeTask(id);
   }
 
+  const handleCheckChange = () => {
+    editTask(id, text, !completed)
+  }
+
   /* If the edit button was clicked, show the edit form instead of the task item */
   let content = edit ? (
-    <EditForm id={id} text={text} setEdit={setEdit} />
+    <EditForm id={id} text={text} completed={completed} setEdit={setEdit} />
   ) : (
     <div className="flex items-center justify-between px-3 py-2 bg-offwhite w-full rounded">
-      <Checkbox setCompleted={setCompleted}/>
+      <input type="checkbox" onChange={handleCheckChange} checked={completed}/>
       <div className={`flex mx-4 ${completed ? 'line-through' : ''}`}>
         {text}
       </div>

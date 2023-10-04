@@ -1,20 +1,14 @@
 {
   "tasks": [
     {
-      "text": "Walk the dog",
+      "text": "edit a task",
+      "completed": false,
       "id": 1
     },
     {
-      "text": "Work on projects",
+      "text": "test the edit task",
+      "completed": false,
       "id": 2
-    },
-    {
-      "text": "Apply to job",
-      "id": 3
-    },
-    {
-      "text": "testing out a longer style task",
-      "id": 4
     }
   ]
 }

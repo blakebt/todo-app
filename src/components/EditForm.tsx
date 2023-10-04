@@ -5,10 +5,11 @@ import Button from './Button';
 interface EditFormProps {
   id: number,
   text: string,
+  completed: boolean,
   setEdit: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const EditForm: React.FC<EditFormProps> = ({ id, text, setEdit }) => {
+const EditForm: React.FC<EditFormProps> = ({ id, text, completed, setEdit }) => {
   const [task, setTask] = useState<string>(text)
   const context = useTasksContext()
   
@@ -18,7 +19,13 @@ const EditForm: React.FC<EditFormProps> = ({ id, text, setEdit }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    editTask(id, task)
+
+    if(completed) {
+      editTask(id, task, !completed)
+    } else {
+      editTask(id, task, completed)
+    }
+    
     setEdit(false)
   }
 

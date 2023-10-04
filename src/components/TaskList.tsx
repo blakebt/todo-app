@@ -6,7 +6,7 @@ const TaskList: React.FC<TaskProps> = ({ data }) => {
   const renderedTasks = data.map((item: Task) => {
     return (
       <div className='my-3' key={item.id}>
-        <TaskItem id={item.id} text={item.text} />
+        <TaskItem task={item} />
       </div>
       
     )

@@ -1,6 +1,7 @@
 interface Task {
   id: number,
-  text: string
+  text: string,
+  completed: boolean
 }
 
 interface TaskProps {
@@ -12,7 +13,7 @@ interface TaskContextType {
   fetchTasks: () => Promise<void>;
   addTask: (task: string) => Promise<void>;
   removeTask: (id: number) => Promise<void>;
-  editTask: (id: number, text: string) => Promise<void>
+  editTask: (id: number, text: string, completed: boolean) => Promise<void>
 }
 
 type ContextProp = {

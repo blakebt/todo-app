@@ -15,7 +15,8 @@ const Provider: React.FC<ContextProp> = ({ children }) => {
 
   const addTask = async (task: string) => {
     const response = await axios.post('http://localhost:3005/tasks', {
-      text: task
+      text: task,
+      completed: false
     })
 
     setTasks(prevTasks => {
@@ -33,9 +34,10 @@ const Provider: React.FC<ContextProp> = ({ children }) => {
     setTasks(updatedTasks);
   }
 
-  const editTask = async (id: number, text: string) => {
+  const editTask = async (id: number, text: string, completed: boolean) => {
     const response = await axios.put(`http://localhost:3005/tasks/${id}`, {
-      text
+      text,
+      completed
     })
 
     const updatedTasks = tasks.map((task: Task) => {
@@ -53,7 +55,7 @@ const Provider: React.FC<ContextProp> = ({ children }) => {
     fetchTasks,
     addTask,
     removeTask,
-    editTask
+    editTask,
   }
 
   return (
