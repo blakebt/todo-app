@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 const Button: React.FC<ButtonProps> = ({ primary, danger, rounded, children, className, ...rest }) => {
 
-  const finalClasses = twMerge(classNames(className, 'flex items-center px-3 py-1.5 border', {
+  const finalClasses = twMerge(classNames(className, 'flex items-center px-2 py-1.5 border', {
     'border-tiffany bg-tiffany text-white': primary,
     'border-crayola bg-crayola text-white': danger,
     'border-tiffany bg-tiffany text-white rounded': primary && rounded,
