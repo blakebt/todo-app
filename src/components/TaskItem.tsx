@@ -15,7 +15,7 @@ interface TaskItemProps {
   task: Task
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task: {id, text, completed } }) => {
+const TaskItem = ({ task: { id, text, completed } }: TaskItemProps) => {
   const [edit, setEdit] = useState<boolean>(false);
 
   const context = useTasksContext();

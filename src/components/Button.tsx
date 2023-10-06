@@ -9,7 +9,7 @@ interface ButtonProps {
   children?: React.ReactNode
   onClick?: () => void
 }
-const Button: React.FC<ButtonProps> = ({ primary, danger, rounded, children, className, ...rest }) => {
+const Button = ({ primary, danger, rounded, children, className, ...rest }: ButtonProps) => {
 
   const finalClasses = twMerge(classNames(className, 'flex items-center px-2 py-1.5 border', {
     'border-tiffany bg-tiffany text-white': primary,

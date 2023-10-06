@@ -4,7 +4,7 @@ import Form from "./Form"
 import TaskList from "./TaskList"
 import Panel from "./Panel"
 
-const App: React.FC = () => {
+const App = () => {
 
   const context = useTasksContext()
   

@@ -1,7 +1,7 @@
 import TaskItem from "./TaskItem"
 import type { Task, TaskProps } from "../types/types"
 
-const TaskList: React.FC<TaskProps> = ({ data }) => {
+const TaskList = ({ data }: TaskProps) => {
 
   const renderedTasks = data.map((item: Task) => {
     return (

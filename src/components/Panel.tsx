@@ -5,7 +5,7 @@ interface PanelProps {
   children?: React.ReactNode
 }
 
-const Panel: React.FC<PanelProps> = ({ children, className, ...rest }) => {
+const Panel = ({ children, className, ...rest }: PanelProps) => {
   const finalClasses = classNames(
     'border rounded p-5 shadow',
     className

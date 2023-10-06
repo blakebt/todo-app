@@ -9,7 +9,7 @@ interface EditFormProps {
   setEdit: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const EditForm: React.FC<EditFormProps> = ({ id, text, completed, setEdit }) => {
+const EditForm = ({ id, text, completed, setEdit }: EditFormProps) => {
   const [task, setTask] = useState<string>(text)
   const context = useTasksContext()
   

@@ -3,7 +3,7 @@ import useTasksContext from '../hooks/useTasksContext';
 import Button from './Button';
 
 
-const Form: React.FC = () => {
+const Form = () => {
   const [task, setTask] = useState<string>('')
   const context = useTasksContext()
   
